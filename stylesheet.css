@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.game__canvas {
+  height: 300px;
+  width: 300px;
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-template-rows: 3fr 3fr 3fr;
+}
+.game {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.box {
+  background-color: #aaa;
+  border: 1px solid #ccc;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  font-family:'Courier New', Courier, monospace;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+button {
+  height: 35px;
+  width: 70px;
+  background-color: #444;
+  color: white;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+.box:nth-child(2n) {
+  background-color: #ccc;
+}
+.won {
+    background-color: green !important;
+}
+
+.winner{
+    margin: 10px;
+    background-color: #CCC;
+    font-size: 30px;
+    font-weight: bold;
+}
