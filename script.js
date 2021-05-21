@@ -17,15 +17,53 @@ let current_sign = "O",
 
 all_boxes.forEach((box) => {
   box.addEventListener("click", () => {
+    if(check_win()) {
+      return;
+    }
     if (!(box.innerText === "O" || box.innerText === "X")) {
       box.innerText = current_sign;
-      check_win();
+      if(check_win()){
+        return;
+      }
       check_draw();
       if (current_sign === "O") current_sign = "X";
       else current_sign = "O";
     }
   });
 });
+
+function check_win() {
+  if (horizontal_check() || vertical_check() || diagonal_check()) {
+    if (winner === "O") win.innerText = "Player-I Won!!";
+    else win.innerText = "Player-II Won!!";
+    return true;
+  }
+  return false;
+}
+
+function all_boxes_filled() {
+  for (var i = 0; i < 9; ++i) {
+    if (all_boxes[i].innerText === "") {
+      return false;
+    }
+  }
+  return true;
+}
+
+function check_draw() {
+  if (all_boxes_filled()) {
+    win.innerText = "It's a draw!! Reset to play again!!";
+  }
+}
+
+function reset() {
+  win.innerText = "";
+  all_boxes.forEach((box) => {
+    box.classList.remove("won");
+    box.innerText = "";
+    current_sign = "O";
+  });
+}
 
 function vertical_check() {
   if (
@@ -77,6 +115,7 @@ function vertical_check() {
   }
   return false;
 }
+
 function horizontal_check() {
   if (
     zero_zero.innerText === zero_one.innerText &&
@@ -126,6 +165,7 @@ function horizontal_check() {
 
   return false;
 }
+
 function diagonal_check() {
   if (
     zero_zero.innerText === one_one.innerText &&
@@ -158,24 +198,4 @@ function diagonal_check() {
     return true;
   }
   return false;
-}
-function check_win() {
-  if (horizontal_check() || vertical_check() || diagonal_check()) {
-    if (winner === "O") win.innerText = "Player-I Won!!";
-    else win.innerText = "Player-II Won!!";
-  }
-}
-function all_boxes_filled(){
-
-}
-function check_draw() {
- 
-}
-function reset() {
-  win.innerText = "";
-  all_boxes.forEach((box) => {
-    box.classList.remove("won");
-    box.innerText = "";
-    current_sign = "O";
-  });
 }

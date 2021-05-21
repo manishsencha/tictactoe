@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .game__canvas {
   height: 300px;
@@ -9,19 +9,23 @@ body {
   grid-template-rows: 3fr 3fr 3fr;
 }
 .game {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .box {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   background-color: #aaa;
   border: 1px solid #aaa;
   font-size: 30px;
   font-weight: bold;
   display: flex;
-  font-family:'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -43,12 +47,12 @@ button:hover {
   background-color: #ccc;
 }
 .won {
-    background-color: green !important;
+  background-color: green !important;
 }
 
-.winner{
-    margin: 10px;
-    background-color: #CCC;
-    font-size: 30px;
-    font-weight: bold;
+.winner {
+  margin: 10px;
+  background-color: #ccc;
+  font-size: 30px;
+  font-weight: bold;
 }
