@@ -34,8 +34,8 @@ all_boxes.forEach((box) => {
 
 function check_win() {
   if (horizontal_check() || vertical_check() || diagonal_check()) {
-    if (winner === "O") win.innerText = "Player-I Won!!";
-    else win.innerText = "Player-II Won!!";
+    if (winner === "O") win.innerText = "Player-II Won!!";
+    else win.innerText = "Player-I Won!!";
     return true;
   }
   return false;
