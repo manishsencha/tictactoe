@@ -34,8 +34,8 @@ all_boxes.forEach((box) => {
 
 function check_win() {
   if (horizontal_check() || vertical_check() || diagonal_check()) {
-    if (winner === "O") win.innerText = "Player-II Won!!";
-    else win.innerText = "Player-I Won!!";
+    if (winner === "O") win.innerText = "Player-I Won!!";
+    else win.innerText = "Player-II Won!!";
     return true;
   }
   return false;
@@ -94,7 +94,7 @@ function vertical_check() {
     one_one.classList.add("won");
     two_one.classList.add("won");
 
-    winner = one_zero.innerText;
+    winner = zero_one.innerText;
     return true;
   }
   if (
@@ -110,7 +110,7 @@ function vertical_check() {
     one_two.classList.add("won");
     two_two.classList.add("won");
 
-    winner = two_zero.innerText;
+    winner = zero_two.innerText;
     return true;
   }
   return false;
